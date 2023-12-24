@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package sepatu;
+
+message Sepatu {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    int32 price = 4;
+    string image_url = 6;
+    int32 stock = 7;
+}
+
+message SepatuListRequest {
+}
+
+message SepatuListResponse {
+    repeated Sepatu sepatus = 1;
+}
+
+message SepatuRequest {
+    int32 id = 1;
+}
+
+message SepatuResponse {
+    Sepatu sepatu = 1;
+}
+
+message SepatuCreateRequest {
+    string name = 1;
+    string description = 2;
+    int32 price = 3;
+    string image_url = 4;
+    int32 stock = 5;
+}
+
+message SepatuCreateResponse {
+    Sepatu sepatu = 1;
+}
+
+message SepatuUpdateRequest {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    int32 price = 4;
+    string image_url = 5;
+    int32 stock = 6;
+}
+
+message SepatuUpdateResponse {
+    Sepatu sepatu = 1;
+}
+
+message SepatuDeleteRequest {
+    int32 id = 1;
+}
+
+message SepatuDeleteResponse {
+    string message = 1;
+}
+
+service SepatuService {
+    rpc List(SepatuListRequest) returns (SepatuListResponse);
+    rpc Get(SepatuRequest) returns (SepatuResponse);
+    rpc Create(SepatuCreateRequest) returns (SepatuCreateResponse);
+    rpc Update(SepatuUpdateRequest) returns (SepatuUpdateResponse);
+    rpc Delete(SepatuDeleteRequest) returns (SepatuDeleteResponse);
+}
+
+

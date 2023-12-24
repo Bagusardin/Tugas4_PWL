@@ -1,0 +1,35 @@
+@baseurl = http://127.0.0.1:6543
+
+###
+GET {{baseurl}}/sepatu
+
+### 
+POST {{baseurl}}/sepatu
+
+{
+    "name": "Sepatu High Heels Elegan",
+    "description": "High heels elegan untuk acara formal.",
+    "price": 700000,
+    "image_url": "https://example.com/images/sepatu_high_heels.jpg",
+    "stock": 10
+}
+
+
+
+### 
+PUT {{baseurl}}/sepatu/1
+
+{
+    "name": "Sepatu High Heels Elegan",
+    "description": "High heels elegan untuk acara formal.",
+    "price": 700000,
+    "image_url": "https://example.com/images/sepatu_high_heels.jpg",
+    "stock": 10
+}
+
+
+### 
+DELETE {{baseurl}}/sepatu/1
+
+### 
+GET {{baseurl}}/sepatu/2
